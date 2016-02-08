@@ -11,10 +11,14 @@
  */
 public class Picture
 {
-    private Square wall;
-    private Square window;
-    private Triangle roof;
+    private Square sky;
+    private Circle earthorbit;
+    private Circle earthorbitcover;
+    private Circle earth;
     private Circle sun;
+    private Circle moon;
+    private Circle moonshadow;
+    private Person alien;
 
     /**
      * Constructor for objects of class Picture
@@ -29,58 +33,60 @@ public class Picture
      */
     public void draw()
     {
-        wall = new Square();
-        wall.moveHorizontal(-140);
-        wall.moveVertical(20);
-        wall.changeSize(120);
-        wall.makeVisible();
+        sky = new Square();
+        sky.changeColor("black");
+        sky.moveHorizontal(-310);
+        sky.moveVertical(-120);
+        sky.changeSize(500);
+        sky.makeVisible();
         
-        window = new Square();
-        window.changeColor("black");
-        window.moveHorizontal(-120);
-        window.moveVertical(40);
-        window.changeSize(40);
-        window.makeVisible();
-
-        roof = new Triangle();  
-        roof.changeSize(60, 180);
-        roof.moveHorizontal(20);
-        roof.moveVertical(-60);
-        roof.makeVisible();
+        earthorbit = new Circle();
+        earthorbit.changeColor("red");
+        earthorbit.moveHorizontal(-100);
+        earthorbit.moveVertical(-40);
+        earthorbit.changeSize(200);
+        earthorbit.makeVisible();
+        
+        earthorbitcover = new Circle();
+        earthorbitcover.changeColor("black");
+        earthorbitcover.moveHorizontal(-98);
+        earthorbitcover.moveVertical(-38);
+        earthorbitcover.changeSize(196);
+        earthorbitcover.makeVisible();
+        
+        earth = new Circle();
+        earth.changeColor("blue");
+        earth.moveHorizontal(70);
+        earth.moveVertical(-5);
+        earth.changeSize(30);
+        earth.makeVisible();
 
         sun = new Circle();
         sun.changeColor("yellow");
-        sun.moveHorizontal(100);
-        sun.moveVertical(-40);
-        sun.changeSize(80);
+        sun.moveHorizontal(-30);
+        sun.moveVertical(20);
+        sun.changeSize(68);
         sun.makeVisible();
-    }
-
-    /**
-     * Change this picture to black/white display
-     */
-    public void setBlackAndWhite()
-    {
-        if (wall != null)   // only if it's painted already...
-        {
-            wall.changeColor("black");
-            window.changeColor("white");
-            roof.changeColor("black");
-            sun.changeColor("black");
-        }
-    }
-
-    /**
-     * Change this picture to use color display
-     */
-    public void setColor()
-    {
-        if (wall != null)   // only if it's painted already...
-        {
-            wall.changeColor("red");
-            window.changeColor("black");
-            roof.changeColor("green");
-            sun.changeColor("yellow");
-        }
+        
+        moon = new Circle();
+        moon.changeColor("yellow");
+        moon.moveHorizontal(90);
+        moon.moveVertical(-25);
+        moon.changeSize(15);
+        moon.makeVisible();
+        
+        moonshadow = new Circle();
+        moonshadow.changeColor("black");
+        moonshadow.moveHorizontal(93);
+        moonshadow.moveVertical(-23);
+        moonshadow.changeSize(15);
+        moonshadow.makeVisible();
+        
+        alien = new Person();
+        alien.changeColor("green");
+        alien.changeSize(20, 10);
+        alien.moveHorizontal(47);
+        alien.moveVertical(-138);
+        alien.makeVisible();
     }
 }
